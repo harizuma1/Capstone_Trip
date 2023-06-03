@@ -48,7 +48,7 @@
         여행날짜
         <input type="date" name="startday" id="startday">
         -
-        <input type="date" name="lastday" id="lastday">
+        <input type="date" name="lastday" id="lastday" >
       </div>
 
       <div class="form-floating m-3">
@@ -95,6 +95,23 @@
   slider.oninput=function(){
     output.innerHTML = this.value;
   }
+
+  var now_utc = Date.now() // 지금 날짜를 밀리초로
+  // getTimezoneOffset()은 현재 시간과의 차이를 분 단위로 반환
+  var timeOff = new Date().getTimezoneOffset()*60000; // 분단위를 밀리초로 변환
+  // new Date(now_utc-timeOff).toISOString()은 '2022-05-11T18:09:38.134Z'를 반환
+  var today = new Date(now_utc-timeOff).toISOString().split("T")[0];
+  document.getElementById("startday").setAttribute("min", today);
+
+  var startdayInput = document.getElementById("startday");
+  var lastdayInput = document.getElementById("lastday");
+  startdayInput.addEventListener("change", function() {
+    var selectedDate = new Date(startdayInput.value);
+    var nextDay = new Date(selectedDate);
+    var formattedNextDay = nextDay.toISOString().split("T")[0];
+    lastdayInput.min = formattedNextDay;
+  });
+
 </script>
 </body>
 
