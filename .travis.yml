@@ -18,9 +18,9 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r yuseonjun-springboot-webservice ./*
+  - zip -r yuseonjun-springboot-webservice *
   - mkdir -p deploy
-  - mv yuseonjun-springboot-webservice.zip deploy/yuseonjun-springboot-webservice.zip
+  - mv yuseonjun-springboot2-webservice.zip deploy/yuseonjun-springboot2-webservice.zip
 
 deploy:
   - provider: s3
@@ -41,7 +41,7 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: yuseonjun-springboot-build
-    key: yuseonjun-springboot-webservice.zip
+    key: yuseonjun-springboot2-webservice.zip
 
     bundle_type: zip
     application: yuseonjun-springboot2-webservice
