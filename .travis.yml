@@ -18,7 +18,7 @@ before_install:
 script: "./gradlew clean build"
 
 before_deploy:
-  - zip -r yuseonjun-springboot-webservice *
+  - zip -r yuseonjun-springboot2-webservice *
   - mkdir -p deploy
   - mv yuseonjun-springboot2-webservice.zip deploy/yuseonjun-springboot2-webservice.zip
 
