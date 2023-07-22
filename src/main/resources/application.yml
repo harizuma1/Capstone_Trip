@@ -5,6 +5,8 @@ spring:
     username: root
     password: root
 
+
+
   jpa:
     open-in-view: true
     hibernate:
@@ -35,3 +37,5 @@ spring:
 
 cos:
   key: root
+
+
