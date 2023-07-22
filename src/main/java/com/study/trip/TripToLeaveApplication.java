@@ -8,7 +8,5 @@ public class TripToLeaveApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TripToLeaveApplication.class, args);
-
 	}
-
 }
