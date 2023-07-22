@@ -41,12 +41,12 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY
 
     bucket: yuseonjun-springboot-build
-    key: yuseonjun-springboot2-webservice.zip
+    key: yuseonjun-springboot-webservice.zip
 
     bundle_type: zip
     application: yuseonjun-springboot2-webservice
 
-    deplyment_group: yuseonjun-springboot2-webservice-group
+    deployment_group: yuseonjun-springboot2-webservice-group
     region: ap-northeast-2
     wait-until-deployed: true
 
